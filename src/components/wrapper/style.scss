@@ -1,0 +1,38 @@
+@import './../../style/variables';
+
+.wrapper{
+
+    &__form{
+
+        max-width: 35rem;
+        width: 100%;
+
+        .title{
+            text-align: center;
+            font-size: 2.4rem;
+            font-weight: 400;
+            margin-bottom: 1.8rem;
+        }
+        .input{
+            
+            &:not(:nth-last-of-type(2)){
+              margin-bottom: 1.2rem;
+            }
+        }
+        .btn{
+            display: flex;
+            justify-content: center;
+            margin-top: 4.5rem;
+        }
+        .link{
+            text-align: center;
+            font-size: 1.8rem;
+            white-space: nowrap;
+
+            a{
+                text-decoration: none;
+                color: $link-color;
+            }
+        }
+    }
+}

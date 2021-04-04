@@ -3,24 +3,23 @@ import Input from '../input/Input'
 import './style.scss'
 import {Link} from 'react-router-dom'
 
-const Registration = (props) => {
+const Login = (props) => {
 
 
     return (
         <>
-            <form action="#" className = 'registration'>
-                <h2 className = 'title'>Sign Up</h2>
+            <form action="#" className = 'login'>
+                <h2 className = 'title'>Sign In</h2>
                 <Input label = 'login' placeholder = 'Enter you login...'/>
-                <Input label = 'Email' placeholder = 'Enter you Email...'/>
                 <Input label = 'Password' placeholder = 'Enter you password...'/>
                 <p className = 'btn'>
-                    <Button>Sign Up</Button>
+                    <Button>Sign In</Button>
                 </p>
             </form>
-            <p className = 'link'>If you have account you can <Link to = '/login'>Login</Link></p>
-        </>
+            <p className = 'link'>If you not have account you can <Link to = '/registration'>Registration</Link></p>
+        </> 
     )
 }
 
 
-export default Registration;
+export default Login;

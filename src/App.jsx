@@ -1,12 +1,16 @@
-import Button from './components/button/Button'
-import Input from './components/input/Input'
+import Authorization from './components/authorization/Authorization';
+// import Button from './components/button/Button';
+// import Input from './components/input/Input';
+import {BrowserRouter} from 'react-router-dom';
 
 function App() {
+  const isAuth = false;
   return (
-    <div className="App">
-        <Button className = 'button-sign-up'>Sign Up</Button>
-        <Input/>
-    </div>
+   
+      <div className="App">
+        {(isAuth)? '' : <Authorization/>}
+      </div>
+
   );
 }
 
