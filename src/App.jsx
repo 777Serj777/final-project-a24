@@ -1,14 +1,22 @@
-import Authorization from './components/authorization/Authorization';
-// import Button from './components/button/Button';
-// import Input from './components/input/Input';
-import {BrowserRouter} from 'react-router-dom';
+import {Redirect, Route} from 'react-router-dom';
+import Home from './components/home/Home';
+import WrappForForm from './components/wrappForForm/WrappForForm';
+import {publicRouter} from './router/routers'
 
 function App() {
   const isAuth = false;
   return (
    
       <div className="App">
-        {(isAuth)? '' : <Authorization/>}
+     
+        {(isAuth)? <Home/> : 
+        <WrappForForm>
+            {publicRouter.map(router =>  
+              <Route path = {router.path} component = {router.component}/>
+            )}
+            <Redirect to = '/login'/>
+        </WrappForForm>}
+
       </div>
 
   );

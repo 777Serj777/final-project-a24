@@ -3,6 +3,7 @@ import Input from '../input/Input'
 import './style.scss'
 import {Link} from 'react-router-dom'
 
+
 const Login = (props) => {
 
 
@@ -20,6 +21,5 @@ const Login = (props) => {
         </> 
     )
 }
-
 
 export default Login;

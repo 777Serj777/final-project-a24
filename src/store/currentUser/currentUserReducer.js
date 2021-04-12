@@ -2,6 +2,7 @@ import actionType from './actionType';
 
 const initState = {
     isAuth: false,
+    token: '',
 }
 
 const currentUserReducer = (state = initState, action) => {

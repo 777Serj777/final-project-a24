@@ -16,5 +16,4 @@ const Input = ({children, label, ...props}) => {
     )
 }
 
-
 export default Input;
