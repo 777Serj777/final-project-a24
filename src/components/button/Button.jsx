@@ -1,15 +1,18 @@
 import React from 'react';
-import './style.scss';
+import { StyleButton } from './style';
+
 
 const Button = ({children, ...props}) => {
 
     return (
-        <input
-            {...props} 
-            className = {`button${(props.className) ? ' '+props.className : ''}`} 
-            type = {(props.type === 'submit') ? props.type : "button"}
-            defaultValue = {children}
-        />  
+ 
+             <StyleButton
+                {...props} 
+                type = {(props.type === 'submit') ? props.type : "button"}
+                defaultValue = {children}
+            />  
+ 
+       
     )
 }
 

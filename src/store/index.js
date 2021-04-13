@@ -11,6 +11,5 @@ const rootReducer = combineReducers({
 
 const store = createStore(rootReducer, applyMiddleware(ReduxThunk));
 
-console.log(store);
 
 export default store;

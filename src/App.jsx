@@ -1,7 +1,7 @@
 import {Redirect, Route} from 'react-router-dom';
-import Home from './components/home/Home';
-import WrappForForm from './components/wrappForForm/WrappForForm';
-import {publicRouter} from './router/routers'
+import Home from './pages/home/Home';
+import Auth from './pages/Auth/Auth';
+
 
 function App() {
   const isAuth = false;
@@ -9,13 +9,8 @@ function App() {
    
       <div className="App">
      
-        {(isAuth)? <Home/> : 
-        <WrappForForm>
-            {publicRouter.map(router =>  
-              <Route path = {router.path} component = {router.component}/>
-            )}
-            <Redirect to = '/login'/>
-        </WrappForForm>}
+        {(isAuth)?  <Home/> : <Auth /> }
+      
 
       </div>
 
