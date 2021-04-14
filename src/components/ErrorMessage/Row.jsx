@@ -1,24 +1,23 @@
 import styled from "styled-components";
 
-const StyleContainer = styled.main`
-   
+const StyleRow = styled.div`
+    display: flex;
     max-width: ${props => props.maxWidth || '100%'};
     max-height: ${props => props.maxHeight || '100%'};
     width: ${props => props.width || '100%'};
     height: ${props => props.height || '100%'};
-    margin: 0 auto;
+   
 
 `
 
-const Container = ({children, ...props}) => {
-
+const Row = ({children, ...props}) => {
 
     return (
-        <StyleContainer {...props}>
+        <StyleRow {...props}>
             {children}
-        </StyleContainer>
+        </StyleRow>
     )
 }
 
 
-export default Container;
+export default Row;

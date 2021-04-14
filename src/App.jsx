@@ -1,6 +1,6 @@
 import {Redirect, Route} from 'react-router-dom';
 import Home from './pages/home/Home';
-import Auth from './pages/Auth/Auth';
+import Auth from './pages/auth/Auth';
 
 
 function App() {

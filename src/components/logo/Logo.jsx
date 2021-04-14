@@ -6,7 +6,7 @@ const Logo = (props) => {
     return (
     
         <StyleLogo {...props}>
-            <img src="img/logo.png"/>
+            <img src="img/logo.png" alt = 'logo'/>
             <h1>HIPSTAGRAM</h1>
         </StyleLogo>
 

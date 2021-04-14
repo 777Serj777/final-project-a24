@@ -66,7 +66,7 @@ export  const useForm = () => {
 
         switch (rule) {
             case 'require': {
-                console.log(1);
+                
             }
         }
     }
@@ -77,7 +77,6 @@ export  const useForm = () => {
 
         const rules = validation[name];
 
- 
         for (const [rule, {type} = value] of Object.entries(rules)) {
             checkValid(rule, type)
         }

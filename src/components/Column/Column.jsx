@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const StyleColumn = styled.div`
 
-   margin: ${props => props.mCenter && '0 auto' || 0}
+   margin: ${props => (props.mCenter && '0 auto') || 0};
 
 `
 

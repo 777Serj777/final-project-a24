@@ -12,7 +12,8 @@ export const StyleButton = styled.input`
     color: ${colors.buttonColorText};
     font-family: 'Roboto', sans-serif;
     font-size: 2.4rem;
-    margin-top: ${props => props.mt+'rem' || 0}
+    margin-top: ${props => props.mt+'rem' || 0};
+    
 `
 
 

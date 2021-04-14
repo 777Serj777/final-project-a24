@@ -1,6 +1,6 @@
 import mapRouter from './mapRouter';
-import Login from './../Login/Login';
-import Registration from './../Registration/Registration';
+import Login from '../login/login';
+import Registration from '../registration/Registration';
 import { Redirect } from 'react-router';
 
 const authRouter = [
@@ -17,12 +17,14 @@ const authRouter = [
     },
     {
         path: '*',
-        component: <Redirect to = {mapRouter.DEFAULT_ROUTER}/>,
+        component: () => <Redirect to = {mapRouter.DEFAULT_ROUTER}/>,
       
     },
     
 ]
 
-
 export default authRouter;
+
+
+
 
