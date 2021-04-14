@@ -8,11 +8,12 @@ import Wrapper from '../../components/wrapper/Wrapper'
 import ErrorMessage from '../../components/errorMessage/ErrorMessage'
 import Label from '../../components/label/Label'
 import Flex from '../../components/flex/Flex'
+import { useForm } from '../../utils/useForm'
 
 
 const Registration = (props) => {
 
-    const error = false;
+    const [state, error, handleChange] = useForm();
 
     return (
         <>
@@ -22,25 +23,19 @@ const Registration = (props) => {
                     <Label label = 'login'>
                         <Input name = 'login' placeholder = 'Enter you login...'/>
                     </Label> 
-                    <ErrorMessage>
-                        {(error) && <ErrorMessage>{error.message}</ErrorMessage>}
-                    </ErrorMessage>                                    
+                    {(error.login) && <ErrorMessage>{error.login}</ErrorMessage>}                                              
                 </Wrapper>                            
                 <Wrapper mCenter maxWidth = {'35rem'}>
                     <Label label = 'Password'>
                         <Input  name = 'password' placeholder = 'Enter you password...'/>
                     </Label>
-                    <ErrorMessage>
-                        {(error) && <ErrorMessage>{error.message}</ErrorMessage>}
-                    </ErrorMessage>
+                    {(error.password) && <ErrorMessage>{error.password}</ErrorMessage>}
                 </Wrapper>
                 <Wrapper mCenter maxWidth = {'35rem'}>
                     <Label label = 'Email'>
-                    <Input name = 'email'  placeholder = 'Enter you Email...'/>
+                        <Input name = 'email'  placeholder = 'Enter you Email...'/>
                     </Label>
-                    <ErrorMessage>
-                        {(error) && <ErrorMessage>{error.message}</ErrorMessage>}
-                    </ErrorMessage>
+                    {(error.email) && <ErrorMessage>{error.email}</ErrorMessage>}
                 </Wrapper>
                 <Flex justifyCenter>
                     <Button mt = {4.5}>Sign Up</Button>  

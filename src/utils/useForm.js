@@ -1,20 +1,20 @@
 import { useEffect, useState } from "react";
 
 export  const useForm = () => {
-    
+    //login: {message: 'ddd'}, email:  {message: 'fdgg'}
     const [state, setState] = useState({});
-    const [error, setError] = useState({login: {message: 'ddd'}, email:  {message: 'fdgg'}});
+    const [error, setError] = useState({});
 
     const handleChange = e => {
         handlecheckValid(e);
         setState(state => ({...state, [e.target.name]: e.target.value}))
-
+     
     }
 
 
-    // useEffect(() => {
-    //     checkValid(state)
-    // }, [state]);
+    useEffect(() => {
+        console.log(state);
+    }, [state]);
 
     const validation = {
 
@@ -80,11 +80,7 @@ export  const useForm = () => {
         for (const [rule, {type} = value] of Object.entries(rules)) {
             checkValid(rule, type)
         }
-
-
-
-
-       
+        
     }
 
    

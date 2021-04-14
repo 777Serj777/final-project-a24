@@ -8,10 +8,11 @@ const StyleErrorMessage = styled.span`
 `
 
 const ErrorMessage = ({children, ...props}) => {
-
+    const {message} = children;
+    
     return (
         <StyleErrorMessage {...props}>
-            {children}
+            {message}
         </StyleErrorMessage>
     )
 }

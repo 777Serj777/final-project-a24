@@ -15,8 +15,6 @@ import { useForm } from '../../utils/useForm'
 
 const Login = (props) => {
 
-
-
    const [state, error, handleChange] = useForm();
 
     return (
@@ -25,19 +23,15 @@ const Login = (props) => {
             <Form>                  
                 <Wrapper mCenter maxWidth = {'35rem'}>
                     <Label label = 'login'>
-                        <Input  name = 'login' placeholder = 'Enter you login...'/>   
+                        <Input  name = 'login' placeholder = 'Enter you login...' onChange = {handleChange}/>   
                     </Label> 
-                    <ErrorMessage>
-                        {(error) && <ErrorMessage>{error.message}</ErrorMessage>}
-                    </ErrorMessage>                                    
+                    {(error.login) && <ErrorMessage>{error.login}</ErrorMessage>}                         
                 </Wrapper>                            
                 <Wrapper mCenter maxWidth = {'35rem'}>
                     <Label label = 'Password'>
-                        <Input  name = 'password' placeholder = 'Enter you password...'/>
+                        <Input  name = 'password' placeholder = 'Enter you password...' onChange = {handleChange}/>
                     </Label>
-                    <ErrorMessage>
-                        {(error) && <ErrorMessage>{error.message}</ErrorMessage>}
-                    </ErrorMessage>
+                    {(error.passworad) && <ErrorMessage>{error.passworad}</ErrorMessage>}
                 </Wrapper> 
                 <Flex justifyCenter>
                     <Button mt ={3.4}>Sign In</Button>    
