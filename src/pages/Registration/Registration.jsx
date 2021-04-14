@@ -10,35 +10,51 @@ import Label from '../../components/label/Label'
 import Flex from '../../components/flex/Flex'
 import { useForm } from '../../utils/useForm'
 
+const colbackSubmit = () => {
+    console.log(2);
+}
 
 const Registration = (props) => {
 
-    const [state, error, handleChange] = useForm();
+    const [state, errors, handleChange, handleSubmit] = useForm(colbackSubmit);
 
+   
     return (
         <>
             <Title>Sign Up</Title>
-            <Form>
-            <Wrapper mCenter maxWidth = {'35rem'}>
+            <Form onSubmit = {handleSubmit}>
+                <Wrapper mCenter maxWidth = {'35rem'}>
                     <Label label = 'login'>
-                        <Input name = 'login' placeholder = 'Enter you login...'/>
+                        <Input 
+                            name = 'login' 
+                            placeholder = 'Enter you login...' 
+                            onChange = {handleChange}
+                        />
                     </Label> 
-                    {(error.login) && <ErrorMessage>{error.login}</ErrorMessage>}                                              
+                    {(errors.login) && <ErrorMessage>{errors.login}</ErrorMessage>}                                              
                 </Wrapper>                            
                 <Wrapper mCenter maxWidth = {'35rem'}>
                     <Label label = 'Password'>
-                        <Input  name = 'password' placeholder = 'Enter you password...'/>
+                        <Input  
+                            name = 'password' 
+                            placeholder = 'Enter you password...' 
+                            onChange = {handleChange}
+                        />
                     </Label>
-                    {(error.password) && <ErrorMessage>{error.password}</ErrorMessage>}
+                    {(errors.password) && <ErrorMessage>{errors.password}</ErrorMessage>}
                 </Wrapper>
                 <Wrapper mCenter maxWidth = {'35rem'}>
                     <Label label = 'Email'>
-                        <Input name = 'email'  placeholder = 'Enter you Email...'/>
+                        <Input 
+                            name = 'email'  
+                            placeholder = 'Enter you Email...' 
+                            onChange = {handleChange}
+                        />
                     </Label>
-                    {(error.email) && <ErrorMessage>{error.email}</ErrorMessage>}
+                    {(errors.email) && <ErrorMessage>{errors.email}</ErrorMessage>}
                 </Wrapper>
                 <Flex justifyCenter>
-                    <Button mt = {4.5}>Sign Up</Button>  
+                    <Button type = 'submit' mt = {4.5} value = 'Sign In' />  
                 </Flex>   
             </Form>   
             <Text mt = {4.1}>

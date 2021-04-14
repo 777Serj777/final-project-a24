@@ -10,31 +10,34 @@ import ErrorMessage from '../../components/errorMessage/ErrorMessage'
 import Flex from '../../components/flex/Flex'
 import { useForm } from '../../utils/useForm'
 
-
+const clickSubmit = () => {
+    console.log(1);
+}
 
 
 const Login = (props) => {
 
-   const [state, error, handleChange] = useForm();
+   const [ state, errors, handleChange, handleSubmit] = useForm(clickSubmit);
+   
 
     return (
         <>
             <Title>Sign In</Title>
-            <Form>                  
+            <Form onSubmit = {handleSubmit}>                  
                 <Wrapper mCenter maxWidth = {'35rem'}>
                     <Label label = 'login'>
-                        <Input  name = 'login' placeholder = 'Enter you login...' onChange = {handleChange}/>   
+                        <Input name = 'login' placeholder = 'Enter you login...' onChange = {handleChange}/>   
                     </Label> 
-                    {(error.login) && <ErrorMessage>{error.login}</ErrorMessage>}                         
+                    {(errors.login) && <ErrorMessage>{errors.login}</ErrorMessage>}                         
                 </Wrapper>                            
                 <Wrapper mCenter maxWidth = {'35rem'}>
                     <Label label = 'Password'>
                         <Input  name = 'password' placeholder = 'Enter you password...' onChange = {handleChange}/>
                     </Label>
-                    {(error.passworad) && <ErrorMessage>{error.passworad}</ErrorMessage>}
+                    {(errors.password) && <ErrorMessage>{errors.password}</ErrorMessage>}
                 </Wrapper> 
                 <Flex justifyCenter>
-                    <Button mt ={3.4}>Sign In</Button>    
+                    <Button type = 'submit' mt ={3.4} value = 'Sign In'/>    
                 </Flex>                                                        
             </Form>
             <Text mt = {4.1}>
