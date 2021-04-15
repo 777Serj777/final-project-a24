@@ -3,6 +3,7 @@ const whiteColor = '#fff';
 const secondWhiteColor = '#FEFEFE';
 const blackColor = '#1A1A2E';
 const greyColor = '#C0BFBF';
+const greyDarkColor = '#F3F2F2';
 
 
 
@@ -16,4 +17,6 @@ export const colors = {
     inputColorBg: secondWhiteColor,
     textColor: blackColor,
     linkColor: blueColor,
+    bgHeader: blueColor,
+    bgMain: greyDarkColor,
 }

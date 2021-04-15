@@ -25,7 +25,8 @@ const Auth = (props) => {
                                 <Route 
                                     key = {path} 
                                     path = {path} 
-                                    component = {component}>  
+                                >  
+                                    {component}
                                 </Route>)}
                             </Switch>
                         </BrowserRouter>

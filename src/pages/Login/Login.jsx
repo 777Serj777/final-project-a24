@@ -50,8 +50,15 @@ const Login = (props) => {
                     </StyleInput>
                     {(errors.password) && <ErrorMessage>{errors.password}</ErrorMessage>}
                 </Wrapper> 
-                <Flex justifyCenter>
-                    <Button type = 'submit' mt ={3.4} value = 'Sign In'/>    
+                <Flex justify = {'center'}>
+                    <Button
+                        maxWidth = {'20rem'}
+                        minHeight = {'5rem'} 
+                        bRadius = {'1rem'}
+                        type = 'submit' 
+                        mt ={'3.4rem'} 
+                        value = 'Sign In'
+                    />    
                 </Flex>                                                        
             </Form>
             <Text mt = {4.1}>

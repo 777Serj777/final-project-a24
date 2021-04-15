@@ -7,18 +7,15 @@ const authRouter = [
 
     {
         path: mapRouter.LOGIN_ROUTER,
-        component: Login,
-    
+        component: <Login/>   
     },
     {
         path: mapRouter.REGISTRATION_ROUTER,
-        component: Registration,
-      
+        component: <Registration/>     
     },
     {
         path: '*',
-        component: () => <Redirect to = {mapRouter.DEFAULT_ROUTER}/>,
-      
+        component: <Redirect to = {mapRouter.DEFAULT_ROUTER}/>     
     },
     
 ]

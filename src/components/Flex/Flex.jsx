@@ -4,10 +4,11 @@ const StyleFlex = styled.div`
 
     display: flex;
     width: 100%;
-    height: 100%;
-    justify-content: ${props => (props.justifyCenter && 'center') || 'stretch'};
-    align-items: ${props => (props.alignCenter && 'center') || 'stretch'};
+    height: ${({height}) => height || '100%'};
+    justify-content: ${({justify}) => (justify) || 'stretch'};
+    align-items: ${({align}) => (align) || 'stretch'};
     flex-direction: ${props => (props.column && 'column') || 'row'};
+
 
 
 `

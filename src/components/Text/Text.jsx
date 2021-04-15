@@ -1,14 +1,15 @@
 import styled from "styled-components";
-import {colors} from './../../style/variables'
+import {colors} from '../../style/variables'
  
 const StyleText = styled.p`
 
     text-align: center;
-    font-size: 1.8rem;
+    font-size: ${({fSize}) => fSize || '1.8rem'};
     white-space: nowrap;
     margin-top: ${props => props.mt+'rem' || 0};
+    
 
-    a {
+    a{
         text-decoration: none;
         color: ${colors.linkColor}
     }

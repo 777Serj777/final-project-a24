@@ -57,8 +57,15 @@ const Registration = (props) => {
                     </StyleInput>
                     {(errors.email) && <ErrorMessage>{errors.email}</ErrorMessage>}
                 </Wrapper>
-                <Flex justifyCenter>
-                    <Button type = 'submit' mt = {4.5} value = 'Sign In' />  
+                <Flex justify = {'center'}>
+                    <Button 
+                        maxWidth = {'20rem'}
+                        minHeight = {'5rem'}
+                        bRadius = {'1rem'} 
+                        type = 'submit' 
+                        mt = {'4.5rem'} 
+                        value = 'Sign In' 
+                    />  
                 </Flex>   
             </Form>   
             <Text mt = {4.1}>
