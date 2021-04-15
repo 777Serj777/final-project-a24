@@ -1,56 +1,60 @@
 import {Link} from 'react-router-dom'
-import Input from '../../components/input/Input'
 import Button from '../../components/button/Button'
 import Title from '../../components/title/Title'
 import Form from '../../components/form/Form'
 import Text from '../../components/text/Text'
 import Wrapper from '../../components/wrapper/Wrapper'
 import ErrorMessage from '../../components/errorMessage/ErrorMessage'
-import Label from '../../components/label/Label'
 import Flex from '../../components/flex/Flex'
-import { useForm } from '../../utils/useForm'
+import { useForm } from '../../utils/from/useForm'
+import {fetchRegistration} from './fetchRegistration'
+import { useDispatch } from 'react-redux'
+import StyleInput from '../../components/styleInput/StyleInput'
 
-const colbackSubmit = () => {
-    console.log(2);
-}
 
 const Registration = (props) => {
 
-    const [state, errors, handleChange, handleSubmit] = useForm(colbackSubmit);
+    const [errors, handleChange, handleSubmit] = useForm();
+    const dispatch = useDispatch();
 
-   
+    const submitClick = (e) => {
+        e.preventDefault();
+        const data = handleSubmit(e);
+        (data) &&  dispatch(fetchRegistration(data));
+    }
+ 
     return (
         <>
             <Title>Sign Up</Title>
-            <Form onSubmit = {handleSubmit}>
+            <Form onSubmit = {submitClick}>
                 <Wrapper mCenter maxWidth = {'35rem'}>
-                    <Label label = 'login'>
-                        <Input 
+                    <StyleInput label = 'Login'>
+                        <input                  
                             name = 'login' 
                             placeholder = 'Enter you login...' 
                             onChange = {handleChange}
                         />
-                    </Label> 
+                    </StyleInput>              
                     {(errors.login) && <ErrorMessage>{errors.login}</ErrorMessage>}                                              
                 </Wrapper>                            
                 <Wrapper mCenter maxWidth = {'35rem'}>
-                    <Label label = 'Password'>
-                        <Input  
+                    <StyleInput label = 'Password'  >
+                        <input                
                             name = 'password' 
                             placeholder = 'Enter you password...' 
                             onChange = {handleChange}
-                        />
-                    </Label>
+                        />    
+                    </StyleInput>
                     {(errors.password) && <ErrorMessage>{errors.password}</ErrorMessage>}
                 </Wrapper>
                 <Wrapper mCenter maxWidth = {'35rem'}>
-                    <Label label = 'Email'>
-                        <Input 
+                    <StyleInput label = 'Email'>
+                        <input                    
                             name = 'email'  
                             placeholder = 'Enter you Email...' 
                             onChange = {handleChange}
                         />
-                    </Label>
+                    </StyleInput>
                     {(errors.email) && <ErrorMessage>{errors.email}</ErrorMessage>}
                 </Wrapper>
                 <Flex justifyCenter>
@@ -64,6 +68,12 @@ const Registration = (props) => {
     )
 }
 
-
 export default Registration;
 
+/**
+ * 
+ * name: Serjo
+ * password: 1123qwerty1123
+ * email: serjo23.ua@gmai.com
+ * 
+ */

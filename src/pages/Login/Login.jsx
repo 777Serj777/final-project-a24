@@ -1,39 +1,53 @@
 import {Link} from 'react-router-dom'
-import Input from '../../components/input/Input'
+import Input from '../../components/styleInput/StyleInput'
 import Button from '../../components/button/Button'
 import Title from '../../components/title/Title'
 import Form from '../../components/form/Form'
 import Text from '../../components/text/Text'
 import Wrapper from '../../components/wrapper/Wrapper'
-import Label from '../../components/label/Label'
 import ErrorMessage from '../../components/errorMessage/ErrorMessage'
 import Flex from '../../components/flex/Flex'
-import { useForm } from '../../utils/useForm'
+import { useForm } from '../../utils/from/useForm'
+import StyleInput from '../../components/styleInput/StyleInput'
+import fetchLogin from './fetchLogin'
+import { useDispatch } from 'react-redux'
 
-const clickSubmit = () => {
-    console.log(1);
-}
 
 
 const Login = (props) => {
 
-   const [ state, errors, handleChange, handleSubmit] = useForm(clickSubmit);
-   
+   const [errors, handleChange, handleSubmit] = useForm();
+   const dispatch = useDispatch();
+
+   const submitClick  = (e) => {
+        e.preventDefault();
+        const data = handleSubmit(e);
+        console.log(data);
+        (data) && dispatch(fetchLogin(data));
+   }
 
     return (
         <>
             <Title>Sign In</Title>
-            <Form onSubmit = {handleSubmit}>                  
+            <Form onSubmit = {submitClick}>                  
                 <Wrapper mCenter maxWidth = {'35rem'}>
-                    <Label label = 'login'>
-                        <Input name = 'login' placeholder = 'Enter you login...' onChange = {handleChange}/>   
-                    </Label> 
+                    <StyleInput label = 'Login'>
+                        <input  
+                            name = 'login' 
+                            placeholder = 'Enter you login...' 
+                            onChange = {handleChange}
+                        />
+                    </StyleInput>  
                     {(errors.login) && <ErrorMessage>{errors.login}</ErrorMessage>}                         
                 </Wrapper>                            
                 <Wrapper mCenter maxWidth = {'35rem'}>
-                    <Label label = 'Password'>
-                        <Input  name = 'password' placeholder = 'Enter you password...' onChange = {handleChange}/>
-                    </Label>
+                    <StyleInput label = 'Password'  >
+                        <input  
+                            name = 'password' 
+                            placeholder = 'Enter you password...' 
+                            onChange = {handleChange}
+                        />    
+                    </StyleInput>
                     {(errors.password) && <ErrorMessage>{errors.password}</ErrorMessage>}
                 </Wrapper> 
                 <Flex justifyCenter>

@@ -12,12 +12,12 @@ class Fetch {
             ...config
         })
 
+        console.log(response);
+        
         return await response.json()
     }
 
     post = (path, body) => {
-
-        console.log(body);
 
         return this.sendRequest(path, {
             method: 'POST',
@@ -48,8 +48,8 @@ class Fetch {
 const api = new Fetch();
 
 
-export  const userRegistration = (login, email, password) => api.post('auth/registration', {login, email, password})
+export  const userRegistration = ({login, email, password}) => api.post('auth/registration', {login, email, password})
 
-export  const userLogin = (login, password) => api.post('auth/login', {login, password})
+export  const userLogin = ({login, password}) => api.post('auth/login', {login, password})
 
 
