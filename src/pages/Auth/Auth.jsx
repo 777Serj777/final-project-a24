@@ -12,7 +12,7 @@ const Auth = (props) => {
     
     return (
         <Container maxWidth = {'130rem'}>
-            <Flex alignCenter>
+            <Flex align = {'center'}>
                 <Row maxHeight = {'70rem'} >
                     <Column>
                         <Image src = 'img/hipstagram-main-img.png'/>
@@ -39,3 +39,13 @@ const Auth = (props) => {
 
 
 export default Auth;
+
+
+
+/**
+ * 
+ * name: Serjo
+ * password: 1123qwerty1123
+ * email: serjo23.ua@gmai.com
+ * 
+ */

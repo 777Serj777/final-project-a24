@@ -1,4 +1,4 @@
-import { userRegistration } from "../../api/appFetch/Fetch"
+import { userRegistration } from "../../../api/appFetch/Fetch"
 
 export const fetchRegistration = (body) => async dispatch => {
     

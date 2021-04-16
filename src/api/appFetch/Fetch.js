@@ -13,7 +13,7 @@ class Fetch {
         })
 
         console.log(response);
-        
+
         return await response.json()
     }
 
@@ -31,7 +31,7 @@ class Fetch {
     }
 
     get = (path) => {
-
+        console.log(store.getState().currentUser.token);
         return this.sendRequest(path, {
             method: 'GET',
             headers : {
@@ -41,15 +41,13 @@ class Fetch {
 
     }
 
-
-  
 }
 
 const api = new Fetch();
 
 
 export  const userRegistration = ({login, email, password}) => api.post('auth/registration', {login, email, password})
-
+export  const getCurrentUser = () => api.get('users/current')
 export  const userLogin = ({login, password}) => api.post('auth/login', {login, password})
 
 

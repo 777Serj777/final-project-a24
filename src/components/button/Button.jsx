@@ -1,6 +1,6 @@
-import React from 'react';
 import styled from "styled-components";
-import {colors} from '../../style/variables'
+import {colors} from '../../style/variables';
+
 
 
 const StyleButton = styled.input`
@@ -8,10 +8,11 @@ const StyleButton = styled.input`
     min-width: ${({minWidth}) => minWidth || 'auto'};
     max-width: ${({maxWidth}) => maxWidth || 'auto'};
     min-height: ${({minHeight}) => minHeight || 'auto'};
+    max-height: ${({maxHeight}) => maxHeight || 'auto'};
     cursor: pointer;
     outline: none;
     border: none;
-    border-radius: ${({bRadius}) => bRadius || 0};
+    border-radius: ${({bRadius}) => bRadius || '.5rem'};
     font-family: 'Roboto', sans-serif;
     font-size: 2.4rem;
     margin-top: ${props => props.mt || 0};

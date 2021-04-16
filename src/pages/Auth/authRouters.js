@@ -1,6 +1,6 @@
 import mapRouter from './mapRouter';
-import Login from '../login/login';
-import Registration from '../registration/Registration';
+import Login from './login/login';
+import Registration from './registration/Registration';
 import { Redirect } from 'react-router';
 
 const authRouter = [

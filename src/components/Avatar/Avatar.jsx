@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Flex from "../flex/Flex";
+
 
 const StyleAvatar = styled.div`
     
