@@ -1,6 +1,6 @@
 import { userRegistration } from "../../../api/appFetch/Fetch"
 
-export const fetchRegistration = (body) => async dispatch => {
+export const fetchRegistrationThunk = (body) => async dispatch => {
     
     try {
         const {id} =  await userRegistration(body);

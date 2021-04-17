@@ -41,13 +41,16 @@ const SecondRow = styled.section`
 
 `
 
-
-
-
-
 const Header = (props) => {
     
-const {login, posts, following, followers, firstName, lastName} = useSelector(store => store.currentUser.data);
+    const {
+        login, 
+        posts, following, 
+        followers, 
+        firstName, 
+        lastName
+
+    } = useSelector(store => store.currentUser.data);
 
     return (
         <StyleHeader>
@@ -62,18 +65,18 @@ const {login, posts, following, followers, firstName, lastName} = useSelector(st
                 <SecondRow>
                     <ul >
                         <li>
-                           <span>{posts?.length}</span> post
+                           <span>{posts?.length || 0}</span> post
                         </li>
                         <li>
-                            <span>{followers?.length}</span> followers
+                            <span>{followers?.length || 0}</span> followers
                         </li>
                         <li>
-                            <span>{following?.length}</span> following
+                            <span>{following?.length || 0}</span> following
                         </li>
                     </ul>
                 </SecondRow>
                 <Text  fSize = {'1.6rem'}>
-                    {`${firstName} ${lastName}`}
+                    {(firstName && lastName) ? `${firstName} ${lastName}` : ''}
                 </Text>
             </Flex>
         </StyleHeader>

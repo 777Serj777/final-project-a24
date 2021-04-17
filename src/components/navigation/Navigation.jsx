@@ -16,8 +16,9 @@ const StyleNavigation = styled.nav`
    
 `
 
-const Navigation  = props => {
 
+const Navigation  = props => {
+ 
     return (
         <StyleNavigation>
             <Flex align = {'center'}>

@@ -15,11 +15,14 @@ const Login = (props) => {
 
    const [errors, handleChange, handleSubmit] = useForm();
    const dispatch = useDispatch();
+   
+   
+
+
 
    const submitClick  = (e) => {
         e.preventDefault();
         const data = handleSubmit(e);
-        console.log(data);
         (data) && dispatch(fetchLogin(data));
    }
 

@@ -25,10 +25,19 @@ const StyleSearch = styled.div`
 
 const Search  = props => {
 
+    const handleSearchUser =  e => {
+
+        const {value} = e.target;
+
+        if(value.length > 0){
+           console.log( props.history);
+        }
+
+    }
 
     return (
         <StyleSearch {...props}>
-            <input/>
+            <input onChange = {handleSearchUser}/>
         </StyleSearch>   
     )
 

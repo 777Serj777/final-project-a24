@@ -6,8 +6,11 @@ const fetchLogin = (body) => async dispatch => {
         dispatch({type: 'START_LOADER'});
         const {access_token: token} = await userLogin(body);
         await dispatch({type: 'SIGN_IN_USER', payload:{token}});
+        localStorage.setItem('access_token', JSON.stringify({
+            token: token,
+            expires_in: ''
+        }))
         const data = await getCurrentUser();
-        console.log(data);
         await dispatch({type: 'SET_DATA_CARRENT_USER', payload:{...data}});
     }
     catch(e){

@@ -10,6 +10,7 @@ import Image from '../../components/image/Image';
 
 const Auth = (props) => {
     
+
     return (
         <Container maxWidth = {'130rem'}>
             <Flex align = {'center'}>
@@ -21,8 +22,9 @@ const Auth = (props) => {
                         <Logo mt = {8.8} mb = {4.8}/>
                         <BrowserRouter>
                             <Switch>
-                                {authRouter.map(({path, component}) => 
+                                {authRouter.map(({path, component, expect}) => 
                                 <Route 
+                                    expect = {expect}
                                     key = {path} 
                                     path = {path} 
                                 >  

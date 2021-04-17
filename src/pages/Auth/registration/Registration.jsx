@@ -5,7 +5,7 @@ import Form from '../../../components/form/Form'
 import Text from '../../../components/text/Text'
 import Flex from '../../../components/flex/Flex'
 import { useForm } from '../../../utils/from/useForm'
-import {fetchRegistration} from './fetchRegistration'
+import {fetchRegistrationThunk} from './fetchRegistrationThunk'
 import { useDispatch } from 'react-redux'
 import Input from '../../../components/Input/Input'
 
@@ -18,7 +18,7 @@ const Registration = (props) => {
     const submitClick = (e) => {
         e.preventDefault();
         const data = handleSubmit(e);
-        (data) &&  dispatch(fetchRegistration(data));
+        (data) &&  dispatch(fetchRegistrationThunk(data));
     }
  
     return (

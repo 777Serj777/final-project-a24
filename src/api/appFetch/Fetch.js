@@ -31,7 +31,7 @@ class Fetch {
     }
 
     get = (path) => {
-        console.log(store.getState().currentUser.token);
+        
         return this.sendRequest(path, {
             method: 'GET',
             headers : {

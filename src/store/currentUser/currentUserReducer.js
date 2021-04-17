@@ -1,9 +1,8 @@
 import actionType from './actionType';
 
 const initState = {
-    isLoader: false,
-    isAuth: false,
-    token: '',
+    isAuth:  false,  
+    token: JSON.parse(localStorage.getItem('access_token')),
     data: {
     }
 }
@@ -21,16 +20,14 @@ const currentUserReducer = (state = initState, action) => {
                 data: {
                     ...state.data,
                     id: payload.id,
-                    isLoader: false   
                 }
             }
         }
         case actionType.SIGN_IN_USER: {
-            console.log(payload);
+
             return {
                 ...state,
-                isAuth: true,
-                isLoader: false,
+                isAuth: true,         
                 ...payload,    
             }
         }
@@ -40,14 +37,8 @@ const currentUserReducer = (state = initState, action) => {
                 isLoader: true              
             }
         }
-        case actionType.END_LOADER: {
-            return {
-                ...state,
-                isLoader: false              
-            }
-        }
         case actionType.SET_DATA_CARRENT_USER: {
-            console.log(payload);
+   
             return {
                 ...state,
                 data: {
@@ -56,7 +47,6 @@ const currentUserReducer = (state = initState, action) => {
                 }             
             }
         }
-
 
         default: {
             return state;
