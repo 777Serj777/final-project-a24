@@ -1,7 +1,8 @@
 import mapRouter from './mapRouter';
 import { Redirect } from 'react-router-dom';
 import Header from '../../components/header/Header';
-import Users from '../users/Users';
+import Users from './users/Users';
+import Setting from './setting/Setting';
 
 const dashboardRouter = [
 
@@ -13,6 +14,11 @@ const dashboardRouter = [
     {
         path: mapRouter.SEARCH_ROUTER,
         component: <Users/>,     
+        expect: true   
+    },
+    {
+        path: mapRouter.SETTING_ROUTER,
+        component: <Setting/>,     
         expect: true   
     },
     {

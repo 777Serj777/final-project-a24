@@ -2,17 +2,28 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import authRouter from './authRouters';
 import Logo from '../../components/logo/Logo';
 import Flex from '../../components/flex/Flex';
-import Container from '../../components/container/Container';
+import Container from '../dashboard/container/Container';
 import Column from '../../components/column/Column';
 import Row from '../../components/row/Row';
 import Image from '../../components/image/Image';
+import styled from 'styled-components';
+
+
+const StyleContainer = styled.div`
+
+    max-width: 130rem;
+    height: 100vh;
+    margin: 0 auto;
+` 
+
+
+
 
 
 const Auth = (props) => {
     
-
     return (
-        <Container maxWidth = {'130rem'}>
+        <StyleContainer>
             <Flex align = {'center'}>
                 <Row maxHeight = {'70rem'} >
                     <Column>
@@ -35,7 +46,7 @@ const Auth = (props) => {
                     </Column>
                 </Row>
             </Flex>
-        </Container>
+        </StyleContainer>
     )
 }
 

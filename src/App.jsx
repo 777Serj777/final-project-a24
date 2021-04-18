@@ -4,27 +4,17 @@ import { useSelector } from 'react-redux';
 import Loader from './components/loader/loader';
 
 
-
-
-
 function App() {
 
   const isAuth = useSelector(store => store.currentUser.isAuth);
   const isLoading = useSelector(store => store.ui.isLoading);
 
-  if(isLoading)  {
-    console.log(1);
-    return <Loader/>
-  }
-
-
+  if(isLoading) return <Loader/>
+  
   return (
     
       <div className="App">
-
-        {(isAuth)?  <Home/> : <Auth /> }
-      
-
+        {(isAuth)?  <Home/> : <Auth /> }  
       </div>
 
   );

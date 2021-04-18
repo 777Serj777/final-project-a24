@@ -7,12 +7,12 @@ const initThunk = (store) => async dispatch => {
         const {token} = store.getState().currentUser.token
         
         if (token) {
-            await dispatch({type: 'SIGN_IN_USER', payload:{token}})
             await dispatch({type: 'LOADER_ON'})
+            await dispatch({type: 'SIGN_IN_USER', payload:{token}})
             const data = await getCurrentUser()
             await dispatch({type: 'SET_DATA_CARRENT_USER', payload:{...data}})
         } 
-
+      
     }
     catch(e){
         console.log(e)

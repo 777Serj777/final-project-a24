@@ -6,11 +6,13 @@ const StyleFlex = styled.div`
     width: 100%;
     max-width: ${({maxWidth}) => maxWidth || '100%'};
     min-width: ${({minWidth}) => minWidth || 'auto'};
+    max-height: ${({maxHeight}) => maxHeight || '100%'};
+    min-height: ${({minHeight}) => minHeight || 'auto'};
     margin-right: ${({mr}) => mr || 0};
     height: ${({height}) => height || '100%'};
     justify-content: ${({justify}) => (justify) || 'stretch'};
     align-items: ${({align}) => (align) || 'stretch'};
-    flex-direction: ${props => (props.column && 'column') || 'row'};
+    flex-direction: ${props => (props.column && 'column') || ''};
 
 
 

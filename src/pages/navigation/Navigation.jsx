@@ -1,9 +1,13 @@
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router";
 import styled from "styled-components";
+import fetchSearchUsersThunk from "../dashboard/fetchSearchUserThunk";
 import {colors} from "../../style/variables";
-import Button from "../button/Button";
-import Flex from "../flex/Flex";
-import Search from "../search/Search";
-import Title from "../title/Title";
+import Button from "../../components/button/Button";
+import Flex from "../../components/flex/Flex";
+import Search from "./search/Search";
+import Title from "../../components/title/Title";
 
 const StyleNavigation = styled.nav`
     position: fixed;
@@ -12,13 +16,12 @@ const StyleNavigation = styled.nav`
     left:0;
     right: 0;
     background-color: ${colors.bgHeader};
-    padding: 0 2.2rem 0 2.4rem;
-   
+    padding: 0 2.2rem 0 2.4rem; 
 `
 
-
 const Navigation  = props => {
- 
+
+
     return (
         <StyleNavigation>
             <Flex align = {'center'}>

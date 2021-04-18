@@ -1,24 +1,55 @@
 import React from 'react';
 import styled from 'styled-components';
-import Container from '../../components/container/Container';
-import Navigation from '../../components/navigation/Navigation';
+import Container from './container/Container';
+import Navigation from '../navigation/Navigation';
 import dashboardRouter from './dashboardRouter'
 import { colors } from '../../style/variables';
-import { BrowserRouter,  Route, Switch  } from 'react-router-dom';
+import { BrowserRouter,   Route, Switch} from 'react-router-dom';
 
-const StyleDashboard = styled.main`
+const StyleDashboard = styled.div`
+
     padding-top: 5.8rem;
     background-color: ${colors.bgMain};
+    min-height: 100%;
     height: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+
+    ::-webkit-scrollbar-track {
+        background-color:#686767;
+        margin-top: 5.8rem;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        -webkit-border-radius: 0;
+        border-radius: 0;
+        background-color: ${colors.bgHeader};
+    }
+
+    
+
+    ::-webkit-resizer{      
+        width: .4rem;
+        height: .4rem;
+    }
+
+    ::-webkit-scrollbar{
+        width: .4rem;
+    }
+
 `
 
+
+
 const Dashboard = (props) => {
+
+
 
     return (
         <StyleDashboard>
             <BrowserRouter>
                 <Navigation></Navigation>
-                <Container mr = {'5.8rem'} ml = {'5.8rem'} bgColor = {'#fff'} maxWidth = {'76.3rem'}>
+                <Container bgColor = {'#fff'}>
                         <Switch>
                             {dashboardRouter.map(({path, component, expect}) => 
                             <Route 

@@ -3,10 +3,10 @@ import {colors} from '../../style/variables'
  
 const StyleText = styled.p`
 
-    text-align: ${({tAlign}) => tAlign || 'auto'};
+    text-align: ${({tAlign}) => tAlign || ''};
     font-size: ${({fSize}) => fSize || '1.8rem'};
     white-space: nowrap;
-    margin-top: ${props => props.mt+'rem' || 0};
+    margin-top: ${({mt}) => mt || ''};
     
 
     a{

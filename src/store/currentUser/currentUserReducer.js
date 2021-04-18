@@ -31,12 +31,6 @@ const currentUserReducer = (state = initState, action) => {
                 ...payload,    
             }
         }
-        case actionType.START_LOADER: {
-            return {
-                ...state,
-                isLoader: true              
-            }
-        }
         case actionType.SET_DATA_CARRENT_USER: {
    
             return {

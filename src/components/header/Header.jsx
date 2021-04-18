@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { useHistory } from "react-router";
 import styled from "styled-components";
 import Avatar from "../Avatar/Avatar";
 import Button from "../button/Button";
@@ -42,7 +43,7 @@ const SecondRow = styled.section`
 `
 
 const Header = (props) => {
-    
+    const history =useHistory();
     const {
         login, 
         posts, following, 
@@ -60,7 +61,7 @@ const Header = (props) => {
             <Flex justify = {'space-between'} height = {'auto'} column>
                 <FirstRow flex >
                     <Text fSize = {'2.4rem'}>{login}</Text>
-                    <Button bRadius = {'.5rem'} maxWidth = {'18rem'}>Edit profile</Button>
+                    <Button onClick = {() => {history.push('/setting')}}  bRadius = {'.5rem'} maxWidth = {'18rem'}>Edit profile</Button>
                 </FirstRow>
                 <SecondRow>
                     <ul >

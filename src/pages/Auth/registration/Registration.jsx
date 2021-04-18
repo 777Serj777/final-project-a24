@@ -54,7 +54,7 @@ const Registration = (props) => {
                     />  
                 </Flex>   
             </Form>   
-            <Text tAlign = {'center'} mt = {4.1}>
+            <Text tAlign = {'center'} mt = {'4.1rem'}>
                 If you have account you can <Link to = '/login'>Login</Link>
             </Text>
         </>  

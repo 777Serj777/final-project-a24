@@ -9,10 +9,12 @@ const StyleAvatar = styled.div`
     max-height: ${({maxHeight}) => maxHeight || '13.4rem'};
     border-radius: 50%;
     overflow: hidden;
+    border: none;
 
     img{
         width: 100%;
         height: 100%;
+        border: none;
     }
 `
 
@@ -24,7 +26,6 @@ const Avatar = ({imgUrl, ...props}) => {
         </StyleAvatar>
     )
 }
-
 
 
 export default Avatar;

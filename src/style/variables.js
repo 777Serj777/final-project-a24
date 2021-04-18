@@ -19,4 +19,5 @@ export const colors = {
     linkColor: blueColor,
     bgHeader: blueColor,
     bgMain: greyDarkColor,
+    borderColor: greyColor,
 }

@@ -17,9 +17,6 @@ const Login = (props) => {
    const dispatch = useDispatch();
    
    
-
-
-
    const submitClick  = (e) => {
         e.preventDefault();
         const data = handleSubmit(e);
@@ -54,7 +51,7 @@ const Login = (props) => {
                     />    
                 </Flex>                                                        
             </Form>
-            <Text tAlign = {'center'} mt = {4.1}>
+            <Text tAlign = {'center'} mt = {'4.1rem'}>
                 If you not have account you can <Link to = '/registration'>Registration</Link>
             </Text>           
         </> 
