@@ -4,6 +4,7 @@ const initState = {
     isAuth:  false,  
     token: JSON.parse(localStorage.getItem('access_token')),
     data: {
+        following: []
     }
 }
 
@@ -12,14 +13,39 @@ const currentUserReducer = (state = initState, action) => {
     const {type, payload} = action;
 
     switch(type){
-        
+    
+        case actionType.UNSUBSCRIBE_USER: {
+   
+            return {
+                ...state,
+                data: {
+                    ...state.data,
+                    following: [
+                        ...state.data.following,
+                    ],
+                }
+            }
+        }
+        case actionType.SUBSCRIBE_TO_USER: {
+            
+            return {
+                ...state,
+                data: {
+                    ...state.data,
+                    following: [
+                        ...state.data.following,
+                        payload
+                    ],
+                }
+            }
+        }
         case actionType.SIGN_UP_USER: {
      
             return {
                 ...state,
                 data: {
                     ...state.data,
-                    id: payload.id,
+                    _id: payload.id,
                 }
             }
         }
@@ -37,7 +63,8 @@ const currentUserReducer = (state = initState, action) => {
                 ...state,
                 data: {
                     ...state.data,
-                    ...payload
+                    ...payload,
+                  
                 }             
             }
         }

@@ -5,9 +5,6 @@ import styled from "styled-components";
 const StyleSection = styled.section`
 
     display: ${({flex}) => (flex && 'flex') || 'block'};
-    
-
-
     ${({addStyle}) => addStyle};
 
 `

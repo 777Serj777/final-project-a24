@@ -1,8 +1,4 @@
-import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { useHistory } from "react-router";
 import styled from "styled-components";
-import fetchSearchUsersThunk from "../dashboard/fetchSearchUserThunk";
 import {colors} from "../../style/variables";
 import Button from "../../components/button/Button";
 import Flex from "../../components/flex/Flex";
@@ -17,6 +13,7 @@ const StyleNavigation = styled.nav`
     right: 0;
     background-color: ${colors.bgHeader};
     padding: 0 2.2rem 0 2.4rem; 
+    z-index: 1;
 `
 
 const Navigation  = props => {
@@ -27,8 +24,8 @@ const Navigation  = props => {
             <Flex align = {'center'}>
                 <Search mr = {'1rem'}></Search>
                 <Title ml = {'auto'} mr = {'1rem'} color = {'#fff'}>Hello :)</Title>
-                <Button ml = {'auto'} mr = {'1.9rem'} maxWidth = {'3rem'} img = {'img/setting.svg'}></Button>
-                <Button maxWidth = {'3rem'} img = {'img/logout.svg'}></Button>
+                <Button ml = {'auto'} mr = {'1.9rem'} minWidth = {'3rem'} img = {'img/setting.svg'}></Button>
+                <Button minWidth = {'3rem'} img = {'img/logout.svg'}></Button>
             </Flex>
         </StyleNavigation>   
     )

@@ -61,7 +61,7 @@ const Header = (props) => {
             <Flex justify = {'space-between'} height = {'auto'} column>
                 <FirstRow flex >
                     <Text fSize = {'2.4rem'}>{login}</Text>
-                    <Button onClick = {() => {history.push('/setting')}}  bRadius = {'.5rem'} maxWidth = {'18rem'}>Edit profile</Button>
+                    <Button onClick = {() => {history.push('/setting')}}  bRadius = {'.5rem'} minWidth = {'18rem'}>Edit profile</Button>
                 </FirstRow>
                 <SecondRow>
                     <ul >

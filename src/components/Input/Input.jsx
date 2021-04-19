@@ -1,22 +1,31 @@
 import ErrorMessage from "../errorMessage/ErrorMessage"
-import Wrapper from "../wrapper/Wrapper"
 import StyleInput from "./StyleInput"
 
 
+const Input = ({
 
-const Input = ({errors , handleChange, ...props}) => {
-    
+    errors , 
+    handleChange, 
+    label, 
+    name,
+    className, 
+    ...props
+
+}) => {
+
+
+
     return (
-        <Wrapper mCenter maxWidth = {'35rem'}>
-            <StyleInput label = {props.label}>
+        <p className = {className}>
+            <StyleInput label = {(label) ? label : ''}>
                 <input                  
-                    name = {props.name}
-                    placeholder = {`Enter you ${props.name}...`} 
+                    name = {(name) ? name : ''} 
                     onChange = {handleChange}
+                    {...props}
                 />
+                {(errors && errors[name]) && <ErrorMessage>{errors[name]}</ErrorMessage>} 
             </StyleInput>              
-            {(errors.login) && <ErrorMessage>{errors.login}</ErrorMessage>} 
-        </Wrapper> 
+        </p> 
     )
 }
 

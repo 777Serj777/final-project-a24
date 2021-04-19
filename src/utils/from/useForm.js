@@ -65,6 +65,34 @@ export  const useForm = () => {
                 type: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/g,
                 message: 'password must be at least one digit'
             } 
+        },
+        firstName:  { 
+            require: {
+                type: false,
+            },
+            maxLength : {
+                type: 30,
+                message: 'first name should not be more 30 characters',
+           
+            },
+            pattern: {
+                type: /^^[a-zA-Zа-яА-я]+$/ig,
+                message: 'first name must only characters'
+            } 
+        },
+        lastName:  { 
+            require: {
+                type: false,
+            },
+            maxLength : {
+                type: 30,
+                message: 'last name should not be more 30 characters',
+           
+            },
+            pattern: {
+                type: /^^[a-zA-Zа-яА-я]+$/ig,
+                message: 'last name must only characters'
+            } 
         }
     }
 
@@ -81,17 +109,24 @@ export  const useForm = () => {
             switch (rule) {
 
                 case 'require': {
-               
+
+                    if(!type && value.length === 0) {
+                        dispatch({type: 'DELETE_ERROR', payload: {name}})
+                        return;
+                    }
+                    else if(!type && value.length > 0) break;
+                
                     if (type && value.length > 0) {
                         dispatch({type: 'DELETE_ERROR', payload: {name}})
                         break;
                     }
+                           
                     dispatch({type: 'ADD_ERROR', payload: {name, message}})                  
                     isValid = false;
                     return; 
                 }
                 case 'minLength': {
-
+               
                     if (type <= value.length) {
                         dispatch({type: 'DELETE_ERROR', payload: {name}})
                         break;

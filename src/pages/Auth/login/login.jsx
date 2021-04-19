@@ -30,28 +30,28 @@ const Login = (props) => {
                 <Input
                     errors = {errors}
                     handleChange = {handleChange}
-                    name = {'login'}
-                    label = {'Login'}
+                    name = 'login'
+                    label = 'Login'
                     
                 />                          
                 <Input
                     errors = {errors}
                     handleChange = {handleChange}
-                    name = {'password'}
-                    label = {'Password'}
+                    name = 'password'
+                    label = 'Password'
                 />
-                <Flex justify = {'center'}>
+                <Flex justify = 'center'>
                     <Button
-                        maxWidth = {'20rem'}
-                        minHeight = {'5rem'} 
-                        bRadius = {'1rem'}
+                        minWidth = '20rem'
+                        minHeight = '5rem'
+                        bRadius = '1rem'
                         type = 'submit' 
-                        mt ={'3.4rem'} 
+                        mt ='3.4rem'
                         value = 'Sign In'
                     />    
                 </Flex>                                                        
             </Form>
-            <Text tAlign = {'center'} mt = {'4.1rem'}>
+            <Text tAlign = 'center' mt = '4.1rem'>
                 If you not have account you can <Link to = '/registration'>Registration</Link>
             </Text>           
         </> 

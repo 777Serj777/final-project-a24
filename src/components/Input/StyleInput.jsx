@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import {colors} from '../../style/variables'
 
 const StyleLabel = styled.label`
-
+    position: relative;
     font-size: 1.4rem;
 
     span{

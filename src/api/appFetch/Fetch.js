@@ -29,7 +29,6 @@ class Fetch {
         })
 
     }
-
     get = (path, token) => {
 
         return this.sendRequest(path, {
@@ -49,6 +48,7 @@ const api = new Fetch();
 export  const userRegistration = ({login, email, password}) => api.post('auth/registration', {login, email, password})
 export  const getCurrentUser = (token) => api.get('users/current', token)
 export  const getUsers = (login) => api.get(`users?search=${login}`)
+export  const folllowUser = (_id) => api.get(`users/follow/${_id}`)
 export  const userLogin = ({login, password}) => api.post('auth/login', {login, password})
 
 

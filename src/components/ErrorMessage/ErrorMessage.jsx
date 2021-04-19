@@ -4,6 +4,7 @@ const StyleErrorMessage = styled.span`
 
     color: red;
     margin-left: 1.5rem;
+    position: absolute;
 
 `
 

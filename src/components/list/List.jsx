@@ -16,7 +16,6 @@ const StyleList = styled.ul`
     }
 `
 
-
 export const List = ({children, ...props}) => {
 
     return (

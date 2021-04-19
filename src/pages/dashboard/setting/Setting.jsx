@@ -1,13 +1,96 @@
+import { useSelector } from "react-redux";
+import Avatar from "../../../components/Avatar/Avatar";
+import Button from "../../../components/button/Button";
+import Input from "../../../components/Input/Input";
+import { useForm } from "../../../utils/from/useForm";
 import StyleSetting from "./StyleSetting";
+
+
 
 
 const Setting = (props) => {
 
+    const data = useSelector(store => store.currentUser.data);
+
+    const [errors, handleChange, handleSubmit] = useForm();
+
+
+    const submitClick  = (e) => {
+        e.preventDefault();
+        handleSubmit(e);
+    
+    }
+
     return (
     
     
-        <StyleSetting>
-            <h2>setting</h2>
+        <StyleSetting>         
+                <form onSubmit = {submitClick} className = 'setting-user'>
+                    <div className = 'setting-user__column-first'>
+                        <Avatar imgUrl = {data.avatar}/>
+                        <label className = 'setting-user__btn-change-av'>
+                            Change photo
+                            <input className = 'setting-user__avatar'  type = 'file'/>
+                        </label>
+                        <Input
+                            errors = {errors}
+                            handleChange = {handleChange}
+                            name = 'login' 
+                            label = 'Login' 
+                            defaultValue = {data.login}                   
+                            placeholder = 'Enter you login...'
+                         />
+                    </div>
+                    <div className = 'setting-user__column-second'>
+                        <Input
+                            errors = {errors}
+                            handleChange = {handleChange}
+                            name = 'firstName' 
+                            label = 'First Name' 
+                            defaultValue = {data.firstName}
+                            placeholder = 'Enter you first name...'
+                        />
+                        <Input
+                            errors = {errors}
+                            handleChange = {handleChange} 
+                            name = 'lastName' 
+                            label = 'Last Name' 
+                            defaultValue = {data.lastName}
+                            placeholder = 'Enter you last name...'
+                        />
+                        <Input
+                            errors = {errors}
+                            handleChange = {handleChange} 
+                            name = 'email' 
+                            label = 'Email' 
+                            defaultValue = {data.email}
+                            placeholder = 'Enter you email...'
+                        />
+                    </div>
+                    <Button 
+                        type = 'submit'  
+                        className = 'btn-save' 
+                        value = 'Save profile'
+                    />
+                </form>
+                <form className = 'change-password'>
+                    <div className = 'change-password__wrap'>
+                        <Input 
+                            className = 'change-password__p' 
+                            name = 'password' 
+                            label = 'Password'
+                            placeholder = 'Enter you password...'
+                             
+                        />
+                        <Input 
+                            className = 'change-password__p' 
+                            name = 'confirmPassword' 
+                            label = 'Confirm password'
+                            placeholder = 'Enter you confirm password...'
+                        />
+                    </div>
+                    <Button  className = 'btn-save' value = 'Save password'/>            
+                </form>      
         </StyleSetting>
     
     

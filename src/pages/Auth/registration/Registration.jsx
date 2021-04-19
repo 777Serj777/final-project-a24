@@ -18,6 +18,7 @@ const Registration = (props) => {
     const submitClick = (e) => {
         e.preventDefault();
         const data = handleSubmit(e);
+
         (data) &&  dispatch(fetchRegistrationThunk(data));
     }
  
@@ -28,33 +29,33 @@ const Registration = (props) => {
                 <Input
                     errors = {errors}
                     handleChange = {handleChange}
-                    name = {'login'}
-                    label = {'Login'}
+                    name = 'login'
+                    label = 'Login'
                 />
                 <Input
                     errors = {errors}
                     handleChange = {handleChange}
-                    name = {'password'}
-                    label = {'Password'}
+                    name = 'password'
+                    label = 'Password'
                 />
                 <Input
                     errors = {errors}
                     handleChange = {handleChange}
-                    name = {'email'}
-                    label = {'Email'}
+                    name = 'email'
+                    label = 'Email'
                 />
-                <Flex justify = {'center'}>
+                <Flex justify = 'center'>
                     <Button 
-                        maxWidth = {'20rem'}
-                        minHeight = {'5rem'}
-                        bRadius = {'1rem'} 
+                        minWidth = '20rem'
+                        minHeight = '5rem'
+                        bRadius = '1rem' 
                         type = 'submit' 
-                        mt = {'4.5rem'} 
+                        mt = '4.5rem' 
                         value = 'Sign In' 
                     />  
                 </Flex>   
             </Form>   
-            <Text tAlign = {'center'} mt = {'4.1rem'}>
+            <Text tAlign = 'center' mt = '4.1rem'>
                 If you have account you can <Link to = '/login'>Login</Link>
             </Text>
         </>  

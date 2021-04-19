@@ -4,7 +4,7 @@ import Container from './container/Container';
 import Navigation from '../navigation/Navigation';
 import dashboardRouter from './dashboardRouter'
 import { colors } from '../../style/variables';
-import { BrowserRouter,   Route, Switch} from 'react-router-dom';
+import { BrowserRouter, Route, Switch} from 'react-router-dom';
 
 const StyleDashboard = styled.div`
 
@@ -26,8 +26,6 @@ const StyleDashboard = styled.div`
         background-color: ${colors.bgHeader};
     }
 
-    
-
     ::-webkit-resizer{      
         width: .4rem;
         height: .4rem;
@@ -39,11 +37,7 @@ const StyleDashboard = styled.div`
 
 `
 
-
-
 const Dashboard = (props) => {
-
-
 
     return (
         <StyleDashboard>
