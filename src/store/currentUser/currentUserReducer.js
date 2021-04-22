@@ -34,7 +34,7 @@ const currentUserReducer = (state = initState, action) => {
                     ...state.data,
                     following: [
                         ...state.data.following,
-                        payload
+                     
                     ],
                 }
             }

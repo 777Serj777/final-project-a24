@@ -3,7 +3,9 @@ import { colors } from "../../../style/variables";
 
 const StyleSetting = styled.div`
 
-    padding-top: 6rem;
+    .container > & {
+        padding-top: 6rem;
+    }
 
     .btn-save{
         margin: 2.2rem 0 0 auto;
@@ -20,8 +22,14 @@ const StyleSetting = styled.div`
         label{
             font-weight: 700;
         }
+        &__error{
+          white-space: nowrap;
+          bottom: 0;
+          transform: translateY(100%);
+        }
         &__btn-change-av{
             display: flex;
+            position: relative;
             align-items: center;
             justify-content: center;
             width: 11.8rem;

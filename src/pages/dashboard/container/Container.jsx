@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const StyleContainer = styled.div`
     
+    position: relative;
     max-width: 76.3rem;
     min-height: 100%;
     background-color: ${({bgColor}) => bgColor || ''};
@@ -14,7 +15,7 @@ const StyleContainer = styled.div`
 const Container = ({children, ...props}) => {
 
     return (
-        <StyleContainer {...props}>
+        <StyleContainer className = 'container' {...props}>
             {children}
         </StyleContainer>
     )

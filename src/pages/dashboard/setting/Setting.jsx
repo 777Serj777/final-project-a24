@@ -1,9 +1,13 @@
-import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Avatar from "../../../components/Avatar/Avatar";
 import Button from "../../../components/button/Button";
+import ErrorMessage from "../../../components/errorMessage/ErrorMessage";
 import Input from "../../../components/Input/Input";
 import { useForm } from "../../../utils/from/useForm";
 import StyleSetting from "./StyleSetting";
+import updateCurrentUserThunk from "./updateCurrentUserThunk";
+
 
 
 
@@ -11,26 +15,36 @@ import StyleSetting from "./StyleSetting";
 const Setting = (props) => {
 
     const data = useSelector(store => store.currentUser.data);
-
-    const [errors, handleChange, handleSubmit] = useForm();
-
+    const dispatch = useDispatch();
+    const {newData, errors, handleChange, handleSubmit} = useForm();
+    // const [isValid, setIsValid] = useState(false);
 
     const submitClick  = (e) => {
         e.preventDefault();
-        handleSubmit(e);
-    
+        const data = handleSubmit(e);
+        dispatch(updateCurrentUserThunk(data));
     }
 
+    // useEffect(() => {
+    //     if(isValid) dispatch(updateCurrentUserThunk(newData));
+    //     setIsValid(false)
+    // }, [newData])
+ 
     return (
-    
     
         <StyleSetting>         
                 <form onSubmit = {submitClick} className = 'setting-user'>
                     <div className = 'setting-user__column-first'>
-                        <Avatar imgUrl = {data.avatar}/>
+                        <Avatar imgUrl = {(newData?.avatar) ? newData.avatar : data.avatar}/>
                         <label className = 'setting-user__btn-change-av'>
                             Change photo
-                            <input className = 'setting-user__avatar'  type = 'file'/>
+                            <input 
+                                name = 'avatar' 
+                                className = 'setting-user__avatar'  
+                                type = 'file' 
+                                onChange = {handleChange}
+                            />
+                            {(errors && errors['avatar']) && <ErrorMessage className = 'setting-user__error'>{errors['avatar']}</ErrorMessage>}
                         </label>
                         <Input
                             errors = {errors}

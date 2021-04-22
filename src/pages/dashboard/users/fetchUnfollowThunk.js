@@ -1,15 +1,16 @@
+import { folllowUser} from "../../../api/appFetch/Fetch"
 
 
-const fetchUnfollowThunk = (user) => async dispatch => {
+const fetchUnfollowThunk = ({_id}) => async dispatch => {
     
-    const id = user._id;
  
     try{
-  
-        await dispatch({type: 'SUBSCRIBE_TO_USER', payload: {_id: id}})
+        
+        await folllowUser(_id);
+        await dispatch({type: 'UNSUBSCRIBE_USER', payload: {id: _id}});
     }
     catch(e){
-        console.log(1);
+        console.log(e);
     }
 
 }

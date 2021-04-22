@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router";
 import styled from "styled-components";
-import fetchSearchUsersThunk from "../../dashboard/fetchSearchUserThunk";
+import fetchSearchUsersThunk from "./fetchSearchUserThunk";
 
 
 

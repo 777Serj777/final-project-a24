@@ -12,7 +12,7 @@ import Input from '../../../components/Input/Input'
 
 const Registration = (props) => {
 
-    const [errors, handleChange, handleSubmit] = useForm();
+    const {errors, handleChange, handleSubmit} = useForm();
     const dispatch = useDispatch();
 
     const submitClick = (e) => {

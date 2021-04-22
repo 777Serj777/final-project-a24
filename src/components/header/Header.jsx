@@ -44,6 +44,9 @@ const SecondRow = styled.section`
 
 const Header = (props) => {
     const history =useHistory();
+
+    const avatar = useSelector(store => store.currentUser.data.avatar);
+    console.log(avatar);
     const {
         login, 
         posts, following, 
@@ -56,7 +59,7 @@ const Header = (props) => {
     return (
         <StyleHeader>
             <Flex mr = {'6.7rem'} maxWidth = {'13.4rem'}>
-                <Avatar imgUrl = {'img/avatar.jpg'}/>
+                <Avatar imgUrl = {avatar}/>
             </Flex>
             <Flex justify = {'space-between'} height = {'auto'} column>
                 <FirstRow flex >

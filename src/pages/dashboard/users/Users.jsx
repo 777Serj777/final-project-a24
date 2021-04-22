@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect } from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
@@ -60,6 +61,7 @@ const User = ({user}) => {
         dispatch(fetchUnfollowThunk(user));
         setFollowing(false);
     }
+   
   
     return (
         <li className  = 'user'>

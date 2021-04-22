@@ -29,26 +29,15 @@ const changeState = {
     },
 
     [actionType.ADD_USER_DATA]: (state, payload) => {
-     
+       
         return {      
             ...state,
-            data: {
-                ...state.data,
+            newData: {
+                ...state.newData,
                 ...payload
             }
         }
     },
-
-    [actionType.CHANGE_IS_VALID]: (state, payload) => {
-    
-        return {      
-            ...state,
-            data: {
-                ...state.data,
-                ...payload
-            }
-        }
-    }
 }
 
 const reducer = (state, action) => {

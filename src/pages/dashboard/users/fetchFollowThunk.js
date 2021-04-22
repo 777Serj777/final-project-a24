@@ -4,11 +4,14 @@ const fetchFollowThunk = ({_id}) => async dispatch => {
     
  
     try{
-        await dispatch({type: 'SUBSCRIBE_TO_USER', payload: {id: _id}});
         await folllowUser(_id);
+        await dispatch({type: 'SUBSCRIBE_TO_USER', payload: {id: _id}});
     }
     catch(e){
-        console.log(1);
+        console.log(e);
+    }
+    finally{
+       
     }
 
 }

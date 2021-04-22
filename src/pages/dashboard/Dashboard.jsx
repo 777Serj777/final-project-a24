@@ -5,6 +5,8 @@ import Navigation from '../navigation/Navigation';
 import dashboardRouter from './dashboardRouter'
 import { colors } from '../../style/variables';
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import Loader from '../../components/loader/loader';
 
 const StyleDashboard = styled.div`
 
@@ -39,11 +41,16 @@ const StyleDashboard = styled.div`
 
 const Dashboard = (props) => {
 
+    const isLoading = useSelector(store => store.ui.isLoading);
+
+   
+
     return (
         <StyleDashboard>
             <BrowserRouter>
                 <Navigation></Navigation>
                 <Container bgColor = {'#fff'}>
+                        {(isLoading) ? <Loader/> :
                         <Switch>
                             {dashboardRouter.map(({path, component, expect}) => 
                             <Route 
@@ -54,6 +61,7 @@ const Dashboard = (props) => {
                                 {component}
                             </Route>)}
                         </Switch>
+                    }
                 </Container>
             </BrowserRouter>
         </StyleDashboard>
